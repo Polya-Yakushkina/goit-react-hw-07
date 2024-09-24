@@ -1,6 +1,6 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 import { nanoid } from 'nanoid';
 import * as Yup from "yup";
 import MaskedInput from "react-text-mask";
@@ -15,7 +15,7 @@ const ContactSchema = Yup.object().shape({
         .max(50, "Too long!")
         .required("This field is required"),
     number: Yup.string()
-        .matches(/^\d{3}-\d{2}-\d{2}$/, "The number must be in format XXX-XX-XX")
+        .matches(/^\d{3}-\d{3}-\d{4}$/, "The number must be in format XXX-XX-XX")
         .required("This field is required"),
 });
 
@@ -54,9 +54,9 @@ export default function ContactForm() {
           {({ field }) => (
             <MaskedInput
               {...field}
-              mask={[/\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
+              mask={[/\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
 
-              placeholder="XXX-XX-XX"
+              placeholder="XXX-XXX-XXXX"
               className={clsx(css.input)}
               id="number"
             />
