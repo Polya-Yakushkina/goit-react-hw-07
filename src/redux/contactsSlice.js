@@ -34,7 +34,8 @@ const slice = createSlice({
             .addCase(addContact.rejected, handleRejected)
             .addCase(deleteContact.pending, handlePending)
             .addCase(deleteContact.fulfilled, (state, { payload }) => {
-                state.items = state.items.filter((item) => item.id !== payload.id)
+                state.items = state.items.filter((item) => item.id !== payload.id);
+                state.loading = false;
             })
             .addCase(deleteContact.rejected, handleRejected)
     }

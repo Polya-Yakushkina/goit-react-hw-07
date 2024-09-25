@@ -36,7 +36,7 @@ p {
 
 body {
   margin: 30px;
-  max-width: 600px;
+  /* max-width: 600px; */
   min-height: 100vh;
 }
 
@@ -47,7 +47,8 @@ h1 {
 
 button {
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid transparent;
+  box-shadow: 0px 2px 5px 0px grey;
   padding: 0.6em 1.2em;
   font-size: 24px;
   font-weight: 500;
@@ -70,7 +71,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: rgb(253, 253, 247);
   }
 
   a:hover {
@@ -78,6 +79,6 @@ button:focus-visible {
   }
 
   button {
-    background-color: #f9f9f9;
+    background-color: rgb(250, 253, 255);
   }
 }
