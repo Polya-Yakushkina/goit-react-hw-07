@@ -4,7 +4,7 @@
     justify-content: space-between;
     border: none;
     border-radius: 5px;
-    transition: transform 0.3s;
+    width: 100%;
 }
 
 .text {
